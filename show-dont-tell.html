@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show. Don't Tell - T-NUA Studio</title>
+    <meta name="description" content="In today's digital age, selling objects that don't physically exist is no longer a challenge. VR platforms are reshaping how businesses present their products.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio" class="logo">
+                    <span class="logo-text">T-NUA STUDIO</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 2rem;">
+                    <span class="title-line">Show.</span>
+                    <span class="title-line">Don't Tell</span>
+                </h1>
+                <p class="hero-subtitle" style="font-size: 1.3rem; max-width: 600px; margin: 0 auto;">
+                    Revolutionizing how businesses present products that don't physically exist yet
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section" style="padding: 6rem 0; background: #0A0A0A;">
+        <div class="container">
+            <div class="content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #66FFE2;">The Challenge</h2>
+                    <p style="font-size: 1.1rem; color: #cccccc; line-height: 1.8; margin-bottom: 2rem;">
+                        In today's digital age, selling objects that don't physically exist is no longer a challenge—at least, it doesn't have to be. 
+                        Whether it's an engineering prototype, a new real estate development, or futuristic designs still on the drawing board, 
+                        traditional presentation methods fall short.
+                    </p>
+                    <p style="font-size: 1.1rem; color: #cccccc; line-height: 1.8;">
+                        Customers struggle to visualize concepts from 2D blueprints and static renderings. 
+                        Sales teams face difficulties explaining complex products that exist only in imagination.
+                    </p>
+                </div>
+                <div class="video-container" style="position: relative;">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playVideo()">▶</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div class="video-container" style="position: relative; order: 2;">
+                    <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #1A3F3F, #003C3C); border-radius: 20px; border: 1px solid rgba(0, 166, 126, 0.2); display: flex; align-items: center; justify-content: center;">
+                        <div style="color: #66FFE2; font-size: 1.2rem; text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🥽</div>
+                            VR Experience Demo
+                        </div>
+                    </div>
+                </div>
+                <div style="order: 1;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #00A67E;">The Solution</h2>
+                    <p style="font-size: 1.1rem; color: #cccccc; line-height: 1.8; margin-bottom: 2rem;">
+                        VR platforms are reshaping how businesses present their products and sell these concepts. 
+                        Instead of asking customers to imagine, we let them experience.
+                    </p>
+                    <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #66FFE2;">✓</span>
+                            Immersive 3D visualization of concepts
+                        </li>
+                        <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #66FFE2;">✓</span>
+                            Interactive product demonstrations
+                        </li>
+                        <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #66FFE2;">✓</span>
+                            Real-time customization and modifications
+                        </li>
+                        <li style="padding-left: 2rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #66FFE2;">✓</span>
+                            Emotional connection through experience
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stats-section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C); padding: 4rem; border-radius: 20px; text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; color: #ffffff;">The Impact</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">85%</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Increase in customer engagement</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #00A67E; margin-bottom: 1rem;">3x</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Faster decision making</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">60%</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Reduction in sales cycles</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-cases" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Use Cases</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Architecture & Real Estate</h3>
+                        <p>Walk through buildings before they're built. Experience spaces, lighting, and atmosphere in photorealistic detail.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚗</div>
+                        <h3>Product Design</h3>
+                        <p>Test drive vehicles, operate machinery, or interact with products in a risk-free virtual environment.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Industrial Prototypes</h3>
+                        <p>Demonstrate complex engineering concepts and industrial processes before physical production.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section" style="text-align: center; padding: 4rem 0;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #ffffff;">Ready to Show Instead of Tell?</h2>
+                <p style="font-size: 1.2rem; color: #cccccc; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Let's create an immersive experience that transforms how your customers understand and connect with your products.
+                </p>
+                <div>
+                    <a href="index.html#contact" class="btn btn-primary" style="margin-right: 1rem;">Start Your Project</a>
+                    <a href="index.html#projects" class="btn btn-outline">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio">
+                    <span>T-NUA STUDIO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Behance">🎨</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 T-NUA Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function playVideo() {
+            alert('Video player would integrate here with your actual VR demo video');
+        }
+
+        // Mobile navigation for this page
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

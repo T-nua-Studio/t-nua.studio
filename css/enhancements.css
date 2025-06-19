@@ -1,0 +1,149 @@
+/* Additional improvements and animations */
+
+/* Loading animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 166, 126, 0.1);
+    border-top: 3px solid #66FFE2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Improved project cards */
+.project-card {
+    background: linear-gradient(135deg, #1A3F3F 0%, #003C3C 100%);
+    border: 1px solid rgba(0, 166, 126, 0.1);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(102, 255, 226, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 166, 126, 0.3);
+}
+
+/* Improved gallery modal */
+.gallery-modal {
+    backdrop-filter: blur(10px);
+}
+
+/* Enhanced floating elements */
+.floating-cube {
+    background: linear-gradient(45deg, #00A67E, #66FFE2, #00A67E, #66FFE2);
+    background-size: 400% 400%;
+    animation: float 4s ease-in-out infinite, gradientShift 8s ease-in-out infinite;
+}
+
+.floating-sphere {
+    background: linear-gradient(45deg, #66FFE2, #00A67E, #66FFE2, #00A67E);
+    background-size: 400% 400%;
+    animation: float 4s ease-in-out infinite, gradientShift 8s ease-in-out infinite;
+    animation-delay: -1.3s, -2s;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Improved button hover effects */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Enhanced service cards */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent, rgba(0, 166, 126, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* Improved footer */
+.footer {
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #66FFE2, transparent);
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00A67E, #66FFE2);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* Enhanced animations for mobile */
+@media (max-width: 768px) {
+    .floating-elements {
+        height: 150px;
+    }
+    
+    .floating-cube,
+    .floating-sphere,
+    .floating-pyramid {
+        animation-duration: 6s;
+    }
+}

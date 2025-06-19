@@ -1,0 +1,24 @@
+{
+  "name": "tnua-studio-website",
+  "version": "1.0.0",
+  "description": "T-NUA Studio Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=3000 --open=/",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "git add . && git commit -m 'Deploy website' && git push origin main"
+  },
+  "keywords": [
+    "portfolio",
+    "cgi",
+    "animation",
+    "vr",
+    "3d",
+    "studio"
+  ],
+  "author": "T-NUA Studio",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

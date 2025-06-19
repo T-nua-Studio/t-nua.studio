@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>T-NUA Studio - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+          body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+          .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00A67E, #66FFE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+          .nav-menu a:hover {
+            color: #66FFE2;
+        }
+          /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(145deg, #003C3C 0%, #00A67E 100%);
+        }
+          .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #66FFE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+          .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #00A67E, #66FFE2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+          .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 166, 126, 0.4);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+          .section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffffff, #66FFE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+          .card {
+            background: linear-gradient(135deg, #1A3F3F, #003C3C);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 166, 126, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #66FFE2;
+            box-shadow: 0 15px 30px rgba(0, 166, 126, 0.3);
+        }
+        
+        .card h3 {
+            color: #66FFE2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Sora', sans-serif;
+        }
+          /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #1A3F3F, #003C3C);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+          .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 166, 126, 0.1);
+            border: 1px solid rgba(0, 166, 126, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #66FFE2;
+            box-shadow: 0 0 15px rgba(0, 166, 126, 0.3);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio" style="height: 30px; margin-right: 10px; vertical-align: middle;">
+                T-NUA STUDIO
+            </div>            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>WORD OF FUTURE</h1>
+            <p>Creating extraordinary CGI, animation, and VR experiences that reshape how businesses present their products and concepts.</p>
+            <a href="#services" class="btn">Explore Services</a>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🎬 CGI VIDEOS</h3>
+                    <p>Professional CGI video production and 3D visualization for products and concepts that don't physically exist yet.</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 ANIMATION</h3>
+                    <p>Custom animation and motion graphics that bring ideas to life across all platforms and mediums.</p>
+                </div>
+                <div class="card">
+                    <h3>🥽 VR EXPERIENCES</h3>
+                    <p>Immersive virtual reality content and applications that revolutionize how you present and sell concepts.</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Featured Project -->
+    <section class="section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2 style="text-align: left; margin-bottom: 2rem;">Show. Don't Tell</h2>
+                    <p style="font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 2rem;">
+                        In today's digital age, selling objects that don't physically exist is no longer a challenge—at least, it doesn't have to be. 
+                        Whether it's an engineering prototype, a new real estate development, or futuristic designs still on the drawing board, 
+                        VR platforms are reshaping how businesses present their products and sell these concepts.
+                    </p>
+                    <a href="show-dont-tell.html" class="btn">Read More</a>
+                </div>
+                <div style="background: linear-gradient(135deg, #1A3F3F, #003C3C); height: 300px; border-radius: 15px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0, 166, 126, 0.2);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #00A67E, #66FFE2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="grid">                <div class="card">
+                    <h3>Hot Wheels Champion Experience</h3>
+                    <p>Virtual Hot Wheels driving experience with immersive VR technology.</p>
+                    <a href="hot-wheels-champion.html" class="btn" style="margin-top: 1rem;">View Project</a>
+                </div>
+                <div class="card">
+                    <h3>Cockaigne</h3>
+                    <p>Three-channel video installation exploring reality, virtuality, and perspectives through gaming.</p>
+                    <a href="cockaigne.html" class="btn" style="margin-top: 1rem;">View Project</a>
+                </div>
+                <div class="card">
+                    <h3>Coming Soon</h3>
+                    <p>New exciting projects in development. Stay tuned for more innovative experiences.</p>
+                    <a href="coming-soon.html" class="btn" style="margin-top: 1rem;">Learn More</a>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- Clients Section -->
+    <section class="section" style="background: #1a1a1a;">
+        <div class="container">
+            <h2>Our Clients</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; align-items: center;">
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/ONG-logo.webp" alt="ONG" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/logoMench-logo.webp" alt="Mench" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/lima_creative_logo.webp" alt="Lima Creative" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/Alexander-Schneider-logo.webp" alt="Alexander Schneider" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/adventureworks_logo.webp" alt="Adventure Works" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/CreativeLabs-Logo-.webp" alt="Creative Labs" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/JUNO.webp" alt="JUNO" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="assets/clients/Mimesis.webp" alt="Mimesis" style="max-width: 120px; max-height: 60px; filter: grayscale(100%); transition: filter 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Let's Create Something Extraordinary Together</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="project" placeholder="Project Type">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 T-NUA Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+    </script>
+</body>
+</html>

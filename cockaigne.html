@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockaigne - T-NUA Studio</title>
+    <meta name="description" content="A three-channel video installation exploring reality, virtuality, and Zionism through gaming perspectives and immersive digital art.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio" class="logo">
+                    <span class="logo-text">T-NUA STUDIO</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 2rem;">
+                    <span class="title-line">Cockaigne</span>
+                </h1>
+                <p class="hero-subtitle" style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                    A three-channel video installation exploring reality, virtuality, and Zionism through gaming perspectives
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section" style="padding: 6rem 0; background: #0A0A0A;">
+        <div class="container">
+            <div class="content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #66FFE2;">Conceptual Framework</h2>
+                    <p style="font-size: 1.1rem; color: #cccccc; line-height: 1.8; margin-bottom: 2rem;">
+                        Cockaigne is an ambitious video installation that challenges conventional narratives through the lens of digital gaming environments. 
+                        The project examines the intersection of virtual worlds and political realities, using interactive media to explore complex cultural themes.
+                    </p>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #00A67E; font-size: 1.3rem; margin-bottom: 1rem;">Installation Elements:</h3>
+                        <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">📺</span>
+                                Three synchronized video channels
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🎮</span>
+                                Interactive gaming interfaces
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🌐</span>
+                                Virtual world environments
+                            </li>
+                            <li style="padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🎭</span>
+                                Narrative perspective shifting
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="video-container" style="position: relative;">
+                    <div class="video-placeholder" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #2d1b69, #8b5cf6); border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 10px 15px; border-radius: 10px; color: white; font-weight: bold;">Cockaigne</div>
+                        <div class="play-button" onclick="playVideo('cockaigne')" style="background: linear-gradient(135deg, #00A67E, #66FFE2);">▶</div>
+                        <div style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px; color: white; font-size: 0.9rem;">Video Installation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artistic Vision -->
+            <div class="vision-section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C); padding: 4rem; border-radius: 20px; margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #ffffff;">Artistic Vision</h2>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="color: #66FFE2; margin-bottom: 1.5rem; font-family: 'Sora', sans-serif; font-size: 1.5rem;">Reality vs. Virtuality</h3>
+                        <p style="color: #cccccc; line-height: 1.8;">
+                            The installation questions the boundaries between digital and physical spaces, examining how virtual environments 
+                            can become platforms for exploring real-world political and cultural narratives.
+                        </p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="color: #66FFE2; margin-bottom: 1.5rem; font-family: 'Sora', sans-serif; font-size: 1.5rem;">Gaming as Commentary</h3>
+                        <p style="color: #cccccc; line-height: 1.8;">
+                            Through the familiar interface of gaming, complex themes are made accessible, allowing viewers to engage 
+                            with challenging subject matter through an interactive, immersive experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <div class="tech-section" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Technical Specifications</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                    <div class="service-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">📱</div>
+                        <h3>Multi-Channel Display</h3>
+                        <p>Three synchronized 4K displays with custom video mapping and real-time synchronization.</p>
+                    </div>
+                    <div class="service-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">🎨</div>
+                        <h3>Interactive Elements</h3>
+                        <p>Motion sensors and touch interfaces allow visitors to influence the narrative flow.</p>
+                    </div>
+                    <div class="service-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔊</div>
+                        <h3>Spatial Audio</h3>
+                        <p>Immersive surround sound creates an enveloping audiovisual experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exhibition History -->
+            <div class="exhibition-section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C); padding: 4rem; border-radius: 20px; margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #ffffff;">Exhibition History</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <div style="text-align: center; padding: 2rem; background: rgba(0, 166, 126, 0.1); border-radius: 15px;">
+                        <h3 style="color: #66FFE2; margin-bottom: 1rem; font-family: 'Sora', sans-serif;">Digital Arts Festival 2024</h3>
+                        <p style="color: #cccccc;">Featured installation exploring digital narrative</p>
+                        <div style="color: #00A67E; margin-top: 1rem; font-weight: bold;">Tel Aviv, Israel</div>
+                    </div>
+                    <div style="text-align: center; padding: 2rem; background: rgba(0, 166, 126, 0.1); border-radius: 15px;">
+                        <h3 style="color: #66FFE2; margin-bottom: 1rem; font-family: 'Sora', sans-serif;">Contemporary Media Expo</h3>
+                        <p style="color: #cccccc;">Interactive media and virtual reality showcase</p>
+                        <div style="color: #00A67E; margin-top: 1rem; font-weight: bold;">Berlin, Germany</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Impact -->
+            <div class="impact-section" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Critical Reception</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">15K+</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Exhibition Visitors</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #00A67E; margin-bottom: 1rem;">92%</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Positive Critical Response</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">3</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Art Awards Received</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="project-gallery" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Installation Gallery</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #2d1b69, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Channel 1</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Channel 2</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #065f46, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Channel 3</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #7c2d12, #ea580c); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Interactive Setup</div>
+                </div>
+            </div>
+
+            <!-- Next Project -->
+            <div class="next-project" style="text-align: center; padding: 4rem 0;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2rem; margin-bottom: 2rem; color: #ffffff;">Explore More Projects</h2>
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="hot-wheels-champion.html" class="btn btn-outline">View Hot Wheels Experience</a>
+                    <a href="index.html#projects" class="btn btn-primary">All Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio">
+                    <span>T-NUA STUDIO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Behance">🎨</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 T-NUA Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function playVideo(project) {
+            alert(`${project} installation video would play here with your actual project documentation`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Champion Experience - T-NUA Studio</title>
+    <meta name="description" content="My Virtual Hot Wheels Drive - An immersive VR racing experience that brings the iconic Hot Wheels brand to life in virtual reality.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio" class="logo">
+                    <span class="logo-text">T-NUA STUDIO</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 2rem;">
+                    <span class="title-line">Hot Wheels</span>
+                    <span class="title-line">Champion Experience</span>
+                </h1>
+                <p class="hero-subtitle" style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                    My Virtual Hot Wheels Drive - The ultimate VR racing experience
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section" style="padding: 6rem 0; background: #0A0A0A;">
+        <div class="container">
+            <div class="content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #66FFE2;">Project Overview</h2>
+                    <p style="font-size: 1.1rem; color: #cccccc; line-height: 1.8; margin-bottom: 2rem;">
+                        The Hot Wheels Champion Experience brings the iconic orange track and legendary cars into an immersive virtual reality environment. 
+                        Players can experience the thrill of Hot Wheels racing like never before, with physics-defying stunts and heart-pounding speed.
+                    </p>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #00A67E; font-size: 1.3rem; margin-bottom: 1rem;">Key Features:</h3>
+                        <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🏁</span>
+                                Iconic Hot Wheels track environments
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🚗</span>
+                                Multiple legendary Hot Wheels vehicles
+                            </li>
+                            <li style="margin-bottom: 0.5rem; padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🎮</span>
+                                Immersive VR controls and physics
+                            </li>
+                            <li style="padding-left: 2rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #66FFE2;">🏆</span>
+                                Championship racing modes
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="video-container" style="position: relative;">
+                    <div class="video-placeholder" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #ff6600, #ff9900); border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 10px 15px; border-radius: 10px; color: white; font-weight: bold;">Hot Wheels VR</div>
+                        <div class="play-button" onclick="playVideo('hotwheel')" style="background: linear-gradient(135deg, #00A67E, #66FFE2);">▶</div>
+                        <div style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px; color: white; font-size: 0.9rem;">VR Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="tech-section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C); padding: 4rem; border-radius: 20px; margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #ffffff;">Technical Implementation</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🥽</div>
+                        <h3 style="color: #66FFE2; margin-bottom: 1rem; font-family: 'Sora', sans-serif;">VR Platform</h3>
+                        <p style="color: #cccccc;">Oculus Rift, HTC Vive, PlayStation VR compatible</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                        <h3 style="color: #66FFE2; margin-bottom: 1rem; font-family: 'Sora', sans-serif;">Engine</h3>
+                        <p style="color: #cccccc;">Unity 3D with custom physics simulation</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+                        <h3 style="color: #66FFE2; margin-bottom: 1rem; font-family: 'Sora', sans-serif;">Graphics</h3>
+                        <p style="color: #cccccc;">Photorealistic rendering with real-time lighting</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-section" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Project Results</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">500K+</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">VR Sessions Played</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #00A67E; margin-bottom: 1rem;">4.8★</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Average User Rating</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 900; color: #66FFE2; margin-bottom: 1rem;">95%</div>
+                        <div style="color: #cccccc; font-size: 1.1rem;">Completion Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="project-gallery" style="margin-bottom: 4rem;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, #ffffff, #66FFE2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Project Gallery</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #ff6600, #ff3300); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Track Design</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #0066ff, #0033cc); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Car Models</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #00cc66, #009944); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">VR Interface</div>
+                    <div class="gallery-item" style="background: linear-gradient(135deg, #ff9900, #ff6600); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Racing Action</div>
+                </div>
+            </div>
+
+            <!-- Next Project -->
+            <div class="next-project" style="text-align: center; padding: 4rem 0;">
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2rem; margin-bottom: 2rem; color: #ffffff;">Explore More Projects</h2>
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="cockaigne.html" class="btn btn-outline">View Cockaigne</a>
+                    <a href="index.html#projects" class="btn btn-primary">All Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio">
+                    <span>T-NUA STUDIO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Behance">🎨</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 T-NUA Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function playVideo(project) {
+            alert(`${project} demo video would play here with your actual project footage`);
+        }
+    </script>
+</body>
+</html>
