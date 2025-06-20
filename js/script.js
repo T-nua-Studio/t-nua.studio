@@ -113,63 +113,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Gallery modal functionality
-const galleryItems = document.querySelectorAll('.gallery-item');
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        // Create modal overlay
-        const modal = document.createElement('div');
-        modal.className = 'gallery-modal';
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            cursor: pointer;
-        `;
-        
-        const modalContent = document.createElement('div');
-        modalContent.style.cssText = `
-            max-width: 90vw;
-            max-height: 90vh;
-            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-        `;
-        
-        modalContent.innerHTML = `
-            <h3 style="color: #ffffff; margin-bottom: 1rem;">Gallery Item ${index + 1}</h3>
-            <p style="color: #cccccc;">This would show the actual gallery content</p>
-        `;
-        
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // Close modal on click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                document.body.removeChild(modal);
-            }
-        });
-        
-        // Close modal with Escape key
-        const closeModal = (e) => {
-            if (e.key === 'Escape') {
-                document.body.removeChild(modal);
-                document.removeEventListener('keydown', closeModal);
-            }
-        };
-        document.addEventListener('keydown', closeModal);
-    });
-});
-
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
@@ -185,15 +128,18 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing animation when page loads
+// Initialize typing animation for hero title only if it contains the default demo text
+// This prevents overwriting the actual page name like 'Cockaigne'
 document.addEventListener('DOMContentLoaded', () => {
     const titleLines = document.querySelectorAll('.title-line');
-    const texts = ['WORD', 'OF', 'FUTURE'];
-    
+    // Only run typing animation if the text is the demo placeholder
+    const demoTexts = ['WORD', 'OF', 'FUTURE'];
     titleLines.forEach((line, index) => {
-        setTimeout(() => {
-            typeWriter(line, texts[index], 150);
-        }, index * 500);
+        if (demoTexts.includes(line.textContent.trim())) {
+            setTimeout(() => {
+                typeWriter(line, demoTexts[index], 150);
+            }, index * 500);
+        }
     });
 });
 

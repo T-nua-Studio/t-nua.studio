@@ -47,8 +47,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="min-height: 70vh;">
-        <div class="container">
+    <section class="hero" style="min-height: 70vh; background: url('assets/videos/cockaigne/cockaigne.webp') center center / cover no-repeat; position: relative;">
+        <div style="position: absolute; inset: 0; background: rgba(10,10,10,0.45); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
                 <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 2rem;">
                     <span class="title-line">Cockaigne</span>
@@ -93,32 +94,17 @@
                     </div>
                 </div>
                 <div class="video-container" style="position: relative;">
-                    <div class="video-placeholder" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #2d1b69, #8b5cf6); border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 10px 15px; border-radius: 10px; color: white; font-weight: bold;">Cockaigne</div>
-                        <div class="play-button" onclick="playVideo('cockaigne')" style="background: linear-gradient(135deg, #00A67E, #66FFE2);">▶</div>
-                        <div style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px; color: white; font-size: 0.9rem;">Video Installation</div>
-                    </div>
+                    <img src="assets/videos/cockaigne/exhibition.jpg" alt="Cockaigne Exhibition" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 20px; display: block;">
                 </div>
             </div>
 
-            <!-- Artistic Vision -->
+            <!-- Artistic Vision (3-channel video row, fit 3 videos, no scroll, no crop) -->
             <div class="vision-section" style="background: linear-gradient(135deg, #1A3F3F, #003C3C); padding: 4rem; border-radius: 20px; margin-bottom: 4rem;">
-                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #ffffff;">Artistic Vision</h2>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
-                    <div style="text-align: center; padding: 2rem;">
-                        <h3 style="color: #66FFE2; margin-bottom: 1.5rem; font-family: 'Sora', sans-serif; font-size: 1.5rem;">Reality vs. Virtuality</h3>
-                        <p style="color: #cccccc; line-height: 1.8;">
-                            The installation questions the boundaries between digital and physical spaces, examining how virtual environments 
-                            can become platforms for exploring real-world political and cultural narratives.
-                        </p>
-                    </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <h3 style="color: #66FFE2; margin-bottom: 1.5rem; font-family: 'Sora', sans-serif; font-size: 1.5rem;">Gaming as Commentary</h3>
-                        <p style="color: #cccccc; line-height: 1.8;">
-                            Through the familiar interface of gaming, complex themes are made accessible, allowing viewers to engage 
-                            with challenging subject matter through an interactive, immersive experience.
-                        </p>
-                    </div>
+                <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #ffffff;">Three-Channel Video Installation</h2>
+                <div style="display: flex; gap: 2rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+                    <video src="assets/videos/cockaigne/untitled_s1-1080p.mp4" autoplay loop muted playsinline controls poster="assets/videos/cockaigne/cockaigne.webp" style="flex: 1 1 0; min-width: 0; max-width: 100%; height: auto; border-radius: 16px; background: #222; box-shadow: 0 4px 24px #0005;"></video>
+                    <video src="assets/videos/cockaigne/untitled_s2-1080p.mp4" autoplay loop muted playsinline controls poster="assets/videos/cockaigne/cockaigne.webp" style="flex: 1 1 0; min-width: 0; max-width: 100%; height: auto; border-radius: 16px; background: #222; box-shadow: 0 4px 24px #0005;"></video>
+                    <video src="assets/videos/cockaigne/untitled_s3-1080p.mp4" autoplay loop muted playsinline controls poster="assets/videos/cockaigne/cockaigne.webp" style="flex: 1 1 0; min-width: 0; max-width: 100%; height: auto; border-radius: 16px; background: #222; box-shadow: 0 4px 24px #0005;"></video>
                 </div>
             </div>
 
