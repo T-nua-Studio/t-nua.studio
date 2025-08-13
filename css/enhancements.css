@@ -147,3 +147,78 @@
         animation-duration: 6s;
     }
 }
+
+/* ========= Glass Hero (liquid effect removed) ========= */
+:root{
+    --bg-a:#0E1D22; --bg-b:#10262D; --mint:#4EF0C3; --sky:#6DDCFF;
+    --text:#E6F5F1; --muted:#A4C0BA;
+}
+
+/* Hide helper SVGs but keep accessible to AT if needed */
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0);overflow:hidden}
+
+/* Hero container base override to match new visual */
+.hero{
+    position:relative; min-height:72vh; display:grid; place-items:center;
+    padding:8vmin 24px; color:var(--text);
+    background:linear-gradient(135deg,var(--bg-a),var(--bg-b));
+    overflow:hidden;
+}
+
+/* Projects section matches hero background and layout */
+.projects{
+    position:relative; display:grid; place-items:center;
+    padding:10vmin 24px; color:var(--text);
+    background:linear-gradient(135deg,var(--bg-a),var(--bg-b));
+}
+.projects > .glass{ width:min(1200px,92vw); }
+.projects .section-title{ margin-bottom:3rem; }
+
+/* Decorative orbs removed */
+
+/* Glass panel */
+.glass{
+    position:relative; width:min(1100px,92vw); border-radius:28px;
+    padding:6vmin 7vmin; isolation:isolate;
+    background:linear-gradient(180deg,rgba(16,38,45,.38),rgba(16,38,45,.22));
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Gradient border edge */
+.glass::before{
+    content:""; position:absolute; inset:0; border-radius:28px; pointer-events:none;
+    padding:1px; background:linear-gradient(135deg, rgba(78,240,195,.7), rgba(109,220,255,.6), rgba(78,240,195,.0));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    animation:edgeGlow 6s ease-in-out infinite;
+}
+
+/* Liquid gloss highlights */
+.glass::after{
+    content:""; position:absolute; inset:0; border-radius:28px; pointer-events:none;
+    background:
+        radial-gradient(120% 90% at 20% 0%, rgba(255,255,255,.20), rgba(255,255,255,0) 55%),
+        conic-gradient(from 200deg at 70% 40%, rgba(255,255,255,.12), rgba(255,255,255,0) 40% 80%, rgba(255,255,255,.12));
+    mix-blend-mode:soft-light; opacity:.8;
+    animation:gloss 10s ease-in-out infinite;
+    filter: blur(0.2px);
+}
+
+@keyframes edgeGlow { 50%{opacity:.85} }
+@keyframes gloss     { 50%{transform:translate3d(0,1%,0)} }
+
+.hero-content{max-width:48ch; text-align:center; margin-inline:auto;}
+.hero h1{font:700 clamp(40px,6vw,72px)/1.05 "Space Grotesk",system-ui; letter-spacing:.02em; margin:0 0 .5rem;}
+.hero p{font:400 clamp(16px,2vw,20px)/1.5 "Inter",system-ui; color:var(--muted); margin:0 0 1.5rem;}
+.cta{display:inline-block; padding:.9rem 1.2rem; border-radius:14px; text-decoration:none; font:600 14px/1 Inter;
+    color:#0B1416; background:var(--mint); box-shadow:0 10px 24px rgba(78,240,195,.25);} 
+.cta:hover{transform:translateY(-1px);}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce){
+    .glass::before, .glass::after { animation: none !important; }
+    .glass{ filter:none; }
+}

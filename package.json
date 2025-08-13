@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx live-server --port=3000 --open=/",
     "build": "echo 'Static site - no build step required'",
-    "deploy": "git add . && git commit -m 'Deploy website' && git push origin main"
+  "deploy": "git add . && git commit -m 'Deploy website' && git push origin main",
+  "check:language": "node scripts/check-language.js"
   },
   "keywords": [
     "portfolio",
