@@ -2,15 +2,19 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 }));
 
 // Smooth scrolling for navigation links
@@ -30,10 +34,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+        }
     }
 });
 
@@ -107,10 +113,12 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.floating-cube, .floating-sphere, .floating-pyramid');
     
-    parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + (index * 0.1);
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    if (parallaxElements.length > 0) {
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    }
 });
 
 // Typing animation for hero title
@@ -181,22 +189,26 @@ projectCards.forEach(card => {
 // Add loading animation
 window.addEventListener('load', () => {
     const loading = document.querySelector('.loading');
-    setTimeout(() => {
-        loading.classList.add('fade-out');
+    if (loading) {
         setTimeout(() => {
-            loading.style.display = 'none';
-        }, 500);
-    }, 1000);
+            loading.classList.add('fade-out');
+            setTimeout(() => {
+                loading.style.display = 'none';
+            }, 500);
+        }, 1000);
+    }
 });
 
 // Scroll progress indicator
 const scrollProgress = document.querySelector('.scroll-progress');
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
+if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
+}
 
 // Performance optimization: Throttle scroll events
 function throttle(func, wait) {
