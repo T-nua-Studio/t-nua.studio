@@ -39,11 +39,10 @@
                     <a href="#projects" class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
                 </li>
-                <li class="nav-item">                    <a href="blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">                    <a href="#contact" class="nav-link">Contact</a>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -123,14 +122,28 @@
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Portfolio -->
     <section id="projects" class="projects">
-        <div class="glass">
         <div class="container">
             <h2 class="section-title">PROJECTS</h2>
-            <div class="projects-grid">                <!-- Hot Wheels Champion Experience -->
-                <div class="project-card" style="background: url('assets/HotWheels_champion experience.webp') center center / cover no-repeat;">
-                    <div class="project-image">
+            
+            <!-- Filter Tags -->
+            <div class="projects-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="cgi">#CGI</button>
+                <button class="filter-btn" data-filter="animation">#Animation</button>
+                <button class="filter-btn" data-filter="vr">#VR</button>
+                <button class="filter-btn" data-filter="ar">#AR</button>
+                <button class="filter-btn" data-filter="installation">#Installation</button>
+                <button class="filter-btn" data-filter="commercial">#Commercial</button>
+                <button class="filter-btn" data-filter="interactive">#Interactive</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Hot Wheels Champion Experience -->
+                <div class="project-card" data-tags="vr,commercial,interactive">
+                    <div class="project-image" style="background: url('assets/HotWheels_champion experience.webp') center center / cover no-repeat;">
                         <div class="project-overlay">
                             <h3>Hot Wheels Champion Experience</h3>
                             <p>My Virtual Hot Wheels Drive</p>
@@ -138,9 +151,10 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Cockaigne Project -->
-                <div class="project-card" style="background: url('assets/videos/cockaigne/cockaigne.webp') center center / cover no-repeat;">
-                    <div class="project-image">
+                <div class="project-card" data-tags="installation,vr,interactive">
+                    <div class="project-image" style="background: url('assets/videos/cockaigne/cockaigne.webp') center center / cover no-repeat;">
                         <div class="project-overlay">
                             <h3>Cockaigne</h3>
                             <p>A three-channel video installation exploring reality, virtuality, and Zionism through gaming perspectives.</p>
@@ -148,101 +162,106 @@
                         </div>
                     </div>
                 </div>
-                <!-- Coming Soon Project -->
-                <div class="project-card" style="background: linear-gradient(135deg, #1A3F3F, #003C3C);">
-                    <div class="project-image">
+                
+                <!-- Brainbox -->
+                <div class="project-card" data-tags="cgi,animation,commercial">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Brainbox.jpg') center center / cover no-repeat;">
                         <div class="project-overlay">
-                            <h3>Coming Soon</h3>
-                            <p>New exciting project in development</p>
-                            <a href="coming-soon.html" class="project-link">Learn More</a>
+                            <h3>Brainbox</h3>
+                            <p>CGI video animation for tech product</p>
+                            <a href="project-brainbox.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CGI ad for Israeli Diamond -->
+                <div class="project-card" data-tags="cgi,commercial,animation">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/CGI_ad_for_israelidiamond.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Israeli Diamond Campaign</h3>
+                            <p>Luxury CGI advertising campaign</p>
+                            <a href="project-diamond.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- iPod Motion -->
+                <div class="project-card" data-tags="animation,cgi">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Ipod_motion.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>iPod Motion Design</h3>
+                            <p>Motion graphics and animation</p>
+                            <a href="project-ipod.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ravi-levi -->
+                <div class="project-card" data-tags="commercial,cgi">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Ravi-levi.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Ravi Levi Campaign</h3>
+                            <p>Commercial video production</p>
+                            <a href="project-ravi-levi.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sala -->
+                <div class="project-card" data-tags="animation,interactive">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Sala.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Sala Project</h3>
+                            <p>Interactive animation experience</p>
+                            <a href="project-sala.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sand and Wind -->
+                <div class="project-card" data-tags="animation,installation">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Sand-and-wind.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Sand and Wind</h3>
+                            <p>Installation and animation</p>
+                            <a href="project-sand-wind.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TISSF 2024 -->
+                <div class="project-card" data-tags="installation,cgi">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/TISSF2024.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>TISSF 2024</h3>
+                            <p>Festival installation project</p>
+                            <a href="project-tissf.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Yad Mordechai Shavuot -->
+                <div class="project-card" data-tags="cgi,animation,commercial">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Yad-Morddechai-Shavuot-CGI.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Yad Mordechai Shavuot</h3>
+                            <p>CGI animation for cultural event</p>
+                            <a href="project-yad-mordechai.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Yad Mordechai General -->
+                <div class="project-card" data-tags="cgi,interactive">
+                    <div class="project-image" style="background: url('assets/videos/thumbnails/Yad-mordechai.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Yad Mordechai Interactive</h3>
+                            <p>Interactive CGI experience</p>
+                            <a href="project-yad-mordechai-interactive.html" class="project-link">View Project</a>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">GALLERY</h2>
-            <!-- GALLERY-START -->
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Brainbox.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Brainbox.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/CGI_ad_for_israelidiamond.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/CGI_ad_for_israelidiamond.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Ipod_motion.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Ipod_motion.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Ravi-levi.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Ravi-levi.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Sala.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Sala.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Sand-and-wind.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Sand-and-wind.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/TISSF2024.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/TISSF2024.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Yad-Morddechai-Shavuot-CGI.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Yad-Morddechai-Shavuot-CGI.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/Yad-mordechai.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/Yad-mordechai.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/1.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/2-Tnua-logo.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/2-Tnua-logo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls poster="assets/videos/thumbnails/3.jpg" width="100%" controlsList="nodownload noremoteplayback" oncontextmenu="return false;">
-                        <source src="assets/videos/3.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <!-- GALLERY-END -->
         </div>
     </section>
 

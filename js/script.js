@@ -247,6 +247,34 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ensure video is muted (safety check)
         heroVideo.muted = true;
     }
+
+    // ========= PROJECT FILTER FUNCTIONALITY =========
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const selectedFilter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const tags = card.getAttribute('data-tags') || '';
+                    
+                    if (selectedFilter === 'all' || tags.includes(selectedFilter)) {
+                        card.removeAttribute('data-hidden');
+                        card.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        card.setAttribute('data-hidden', 'true');
+                    }
+                });
+            });
+        });
+    }
 });
 
 // Performance optimization: Throttle scroll events
