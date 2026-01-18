@@ -41,8 +41,9 @@
                 <li class="nav-item">
                     <a href="#gallery" class="nav-link">Gallery</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                <li class="nav-item">                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -53,56 +54,70 @@
         </div>
     </nav>
 
-        <!-- Hero Section (Liquid Glass) -->
+        <!-- Hero Section (Liquid Glass + Video Background) -->
         <section id="home" class="hero">
-            <div class="glass">
+            <!-- Video Background -->
+            <video 
+                id="hero-video" 
+                class="hero-video" 
+                autoplay 
+                muted 
+                playsinline 
+                loop
+                poster="assets/videos/thumbnails/2-Tnua-logo.jpg"
+                aria-label="Hero background video">
+                <source src="assets/videos/2-Tnua-logo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="glass hero-glass">
                 <div class="hero-content">
                     <h1>Move. Learn. Feel.</h1>
-                  <p>An XR experience where movement becomes visible.</p>
+                    <p class="hero-description">
+                        T-nua is a boutique visual storytelling studio. Together with you, we choose the best format for your goals—so the story feels bold and precise, from a commercial video to a VR experience that clearly brings your product to life.
+                    </p>
                     <a class="cta" href="#projects">View Projects</a>
                 </div>
             </div>
         </section>
 
-    <!-- Featured Project -->
-    <section id="featured" class="featured-project">
-        <div class="container">
-            <div class="featured-content">
-                <div class="featured-text">
-                    <h2 class="section-title">Show. Don't Tell</h2>                    <p class="featured-description">
-                        In today's digital age, selling objects that don't physically exist is no longer a challenge—at least, it doesn't have to be. 
-                        Whether it's an engineering prototype, a new real estate development, or futuristic designs still on the drawing board, 
-                        VR platforms are reshaping how businesses present their products and sell these concepts.
-                    </p>
-                    <a href="show-dont-tell.html" class="btn btn-primary">Read More</a>
-                </div>
-                <div class="featured-visual">
-                    <div class="video-placeholder">
-                        <div class="play-button">▶</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services -->
     <section id="services" class="services">
         <div class="container">
+            <h2 class="section-title">SERVICES</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎬</div>
-                    <h3>VIDEOS CGI</h3>
-                    <p>Professional CGI video production and 3D visualization</p>
+                    <div class="service-visual">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/1.jpg" class="service-video">
+                            <source src="assets/videos/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">VIDEOS</h3>
+                        <p class="service-description">Cinematic videos that capture attention and deliver your message with clarity—built around your goal, from concept to final cut.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>ANIMATION</h3>
-                    <p>Custom animation and motion graphics for all platforms</p>
+                    <div class="service-visual">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/3.jpg" class="service-video">
+                            <source src="assets/videos/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">INTERACTIVE CONTENT</h3>
+                        <p class="service-description">Interactive stories that invite people to explore your product or idea—designed to guide, engage, and make complex things feel simple.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🥽</div>
-                    <h3>VR EXPERIENCES</h3>
-                    <p>Immersive virtual reality content and applications</p>
+                    <div class="service-visual">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/Ipod_motion.jpg" class="service-video">
+                            <source src="assets/videos/Ipod_motion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">IMMERSIVE EXPERIENCES</h3>
+                        <p class="service-description">Immersive experiences that place your audience inside the narrative—ideal for demos, exhibitions, and VR formats that make your product tangible.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,6 +243,26 @@
                 </div>
             </div>
             <!-- GALLERY-END -->
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog-preview" class="blog-preview">
+        <div class="container">
+            <h2 class="section-title">BLOG</h2>
+            <div class="blog-preview-grid">
+                <div class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #1A3F3F 0%, #003C3C 100%);"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Show. Don't Tell</h3>
+                        <p class="blog-card-excerpt">In today's digital age, selling objects that don't physically exist is no longer a challenge—at least, it doesn't have to be.</p>
+                        <a href="blog-show-dont-tell.html" class="blog-card-link">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="btn btn-primary">Read All Articles</a>
+            </div>
         </div>
     </section>
 

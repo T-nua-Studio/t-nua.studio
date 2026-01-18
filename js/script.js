@@ -210,6 +210,45 @@ if (scrollProgress) {
     });
 }
 
+// ========= HERO VIDEO HOVER PLAY/PAUSE LOGIC =========
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero');
+    const heroVideo = document.getElementById('hero-video');
+    
+    if (heroSection && heroVideo) {
+        // Desktop: Hover play/pause functionality
+        let isDesktop = window.matchMedia('(hover: hover)').matches;
+        
+        if (isDesktop) {
+            // Initially pause the video on desktop (showing poster frame)
+            heroVideo.pause();
+            heroVideo.currentTime = 0;
+            
+            // Play on hover
+            heroSection.addEventListener('mouseenter', function() {
+                heroVideo.play().catch(err => {
+                    console.log('Video autoplay prevented:', err);
+                });
+                heroVideo.classList.add('playing');
+            });
+            
+            // Pause on mouse leave (keep current frame)
+            heroSection.addEventListener('mouseleave', function() {
+                heroVideo.pause();
+                heroVideo.classList.remove('playing');
+            });
+        } else {
+            // Mobile: Auto-play with loop (already set in HTML)
+            heroVideo.play().catch(err => {
+                console.log('Mobile video autoplay prevented:', err);
+            });
+        }
+        
+        // Ensure video is muted (safety check)
+        heroVideo.muted = true;
+    }
+});
+
 // Performance optimization: Throttle scroll events
 function throttle(func, wait) {
     let timeout;
