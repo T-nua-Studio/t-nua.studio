@@ -166,7 +166,7 @@
 
 /* Hero container base override to match new visual */
 .hero{
-    position:relative; min-height:72vh; display:grid; place-items:center;
+    position:relative; height:100vh; display:grid; place-items:center;
     padding:8vmin 24px; color:var(--text);
     background:linear-gradient(135deg,var(--bg-a),var(--bg-b));
     overflow:hidden;
@@ -616,8 +616,12 @@
 
 .services {
     position: relative;
+    min-height: 72vh;
     padding: 8rem 2rem;
     background: linear-gradient(135deg, var(--bg-a), var(--bg-b));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .services .section-title {
@@ -841,6 +845,8 @@
     justify-content: flex-start;
     overflow: hidden;
     min-height: 300px;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
 }
 
 .project-image::before {
@@ -854,6 +860,10 @@
     transition: all 0.4s ease;
 }
 
+.project-card:hover .project-image {
+    filter: grayscale(0%);
+}
+
 .project-card:hover .project-image::before {
     background: linear-gradient(to top, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.3) 30%, transparent);
 }
@@ -861,6 +871,11 @@
 .project-overlay {
     position: relative;
     z-index: 2;
+    opacity: 0;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
     padding: 1.5rem;
     width: 100%;
     color: var(--text);
@@ -887,6 +902,13 @@
     padding: 0.6rem 1.2rem;
     background: var(--mint);
     color: var(--bg-a);
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.project-card:hover .project-link {
+    opacity: 1;
+    transform: translateY(0);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
