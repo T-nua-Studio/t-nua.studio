@@ -262,6 +262,7 @@
 .hero-glass {
     position: relative;
     z-index: 3;
+    transform: scale(0.8);
 }
 
 /* Hero description text styling */
@@ -622,6 +623,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.services > .container {
+    transform: scale(0.8);
 }
 
 .services .section-title {
