@@ -746,6 +746,7 @@
     }
     
     .services-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
     
@@ -764,6 +765,7 @@
     position: relative;
     padding: 8rem 2rem;
     background: linear-gradient(135deg, var(--bg-a), var(--bg-b));
+    overflow-x: hidden;
 }
 
 .projects .section-title {
@@ -1191,12 +1193,14 @@
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+        max-width: 100%;
     }
-    
+
     .project-card {
         min-height: 300px;
+        max-width: 100%;
     }
-    
+
     .project-image {
         min-height: 300px;
     }
@@ -1228,6 +1232,7 @@
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        max-width: 100%;
     }
     
     .filter-btn {

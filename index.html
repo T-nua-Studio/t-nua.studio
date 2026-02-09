@@ -12,14 +12,57 @@
         </script>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-NUA Studio - CGI, Animation & VR</title>
-    <meta name="description" content="T-NUA Studio - Creating extraordinary CGI, animation, and VR experiences. Professional 3D visualization and immersive digital content.">
+    <title>T-NUA Studio - CGI, 3D Animation & VR Production | Israel</title>
+    <meta name="description" content="Boutique visual storytelling studio. We create CGI videos, 3D animations, and VR experiences for leading brands worldwide.">
+
+    <!-- Basic SEO -->
+    <link rel="canonical" href="https://t-nua.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t-nua.com/">
+    <meta property="og:title" content="T-NUA Studio - CGI, 3D Animation & VR Production | Israel">
+    <meta property="og:description" content="Boutique visual storytelling studio. We create CGI videos, 3D animations, and VR experiences for leading brands worldwide.">
+    <meta property="og:image" content="https://t-nua.com/assets/T-NUA-logo.webp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="T-NUA Studio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://t-nua.com/">
+    <meta name="twitter:title" content="T-NUA Studio - CGI, 3D Animation & VR Production | Israel">
+    <meta name="twitter:description" content="Boutique visual storytelling studio. We create CGI videos, 3D animations, and VR experiences for leading brands worldwide.">
+    <meta name="twitter:image" content="https://t-nua.com/assets/T-NUA-logo.webp">
+
     <link rel="icon" type="image/webp" href="assets/T-NUA-logo.webp">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhancements.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "T-NUA Studio",
+      "alternateName": "T-nua",
+      "url": "https://t-nua.com",
+      "logo": "https://t-nua.com/assets/T-NUA-logo.webp",
+      "description": "Boutique visual storytelling studio specializing in CGI videos, 3D animations, and VR experiences.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IL"
+      },
+      "knowsAbout": ["CGI", "3D Animation", "VR Production", "Interactive Content", "Immersive Experiences"],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -88,7 +131,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/1.jpg" class="service-video">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/1.jpg" class="service-video" loading="lazy">
                             <source src="assets/videos/1.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -99,7 +142,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/3.jpg" class="service-video">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/3.jpg" class="service-video" loading="lazy">
                             <source src="assets/videos/3.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -110,7 +153,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/Ipod_motion.jpg" class="service-video">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/Ipod_motion.jpg" class="service-video" loading="lazy">
                             <source src="assets/videos/Ipod_motion.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -142,6 +185,17 @@
             
             <!-- Projects Grid -->
             <div class="projects-grid">
+                <!-- TnuaXR -->
+                <div class="project-card" data-tags="interactive,vr">
+                    <div class="project-image" style="background: url('assets/TnuaXR.webp') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>TnuaXR</h3>
+                            <p>Interactive XR experience</p>
+                            <a href="https://resen.co.il/tnua/" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Hot Wheels Champion Experience -->
                 <div class="project-card" data-tags="installation,interactive">
                     <div class="project-image" style="background: url('assets/HotWheels_champion experience.webp') center center / cover no-repeat;">
@@ -182,17 +236,6 @@
                             <h3>Israeli Diamond Campaign</h3>
                             <p>Luxury CGI advertising campaign</p>
                             <a href="projects/project-diamond.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- iPod Motion -->
-                <div class="project-card" data-tags="animation,cgi">
-                    <div class="project-image" style="background: url('assets/videos/thumbnails/Ipod_motion.jpg') center center / cover no-repeat;">
-                        <div class="project-overlay">
-                            <h3>iPod Motion Design</h3>
-                            <p>Motion graphics and animation</p>
-                            <a href="projects/project-ipod.html" class="project-link">View Project</a>
                         </div>
                     </div>
                 </div>
