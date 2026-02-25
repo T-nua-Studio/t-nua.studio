@@ -86,19 +86,26 @@
 }
 
 /* Improved button hover effects */
+.btn {
+    display: inline-block; /* required: overflow:hidden doesn't work on inline elements */
+    overflow: hidden;
+}
+
 .btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: translateX(-110%);
+    transition: transform 0.5s ease;
+    pointer-events: none;
 }
 
 .btn-primary:hover::before {
-    left: 100%;
+    transform: translateX(110%);
 }
 
 /* Enhanced service cards */
@@ -219,7 +226,7 @@
 
 .hero-content{max-width:48ch; text-align:center; margin-inline:auto;}
 .hero h1{font:700 clamp(40px,6vw,72px)/1.05 "Space Grotesk",system-ui; letter-spacing:.02em; margin:0 0 .5rem;}
-.hero p{font:400 clamp(16px,2vw,20px)/1.5 "Inter",system-ui; color:var(--muted); margin:0 0 1.5rem;}
+.hero p{font:400 clamp(16px,2vw,20px)/1.5 "Inter",system-ui; color:rgba(255,255,255,0.8); margin:0 0 1.5rem;}
 .cta{display:inline-block; padding:.9rem 1.2rem; border-radius:14px; text-decoration:none; font:600 14px/1 Inter;
     color:#0B1416; background:var(--mint); box-shadow:0 10px 24px rgba(78,240,195,.25);} 
 .cta:hover{transform:translateY(-1px);}
@@ -971,7 +978,7 @@
     width: 100%;
     padding: 0 2rem;
     text-align: center;
-    color: var(--text);
+    color: #ffffff;
 }
 
 .project-hero-title {
@@ -980,12 +987,12 @@
     font-weight: 900;
     margin: 0 0 1rem 0;
     line-height: 1.1;
-    color: var(--text);
+    color: #ffffff;
 }
 
 .project-hero-subtitle {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.8);
     margin: 0;
     max-width: 700px;
     margin: 0 auto;
