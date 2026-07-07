@@ -42,6 +42,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Three.js module imports -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/"
+      }
+    }
+    </script>
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -112,6 +122,9 @@
                 <source src="assets/videos/2-Tnua-logo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+
+            <!-- 3D Background -->
+            <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
             
             <div class="glass hero-glass">
                 <div class="hero-content">
@@ -192,6 +205,28 @@
                             <h3>TnuaXR</h3>
                             <p>Interactive XR experience</p>
                             <a href="https://resen.co.il/tnua/" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate Mixed Reality Experience -->
+                <div class="project-card" data-tags="ar,vr,interactive">
+                    <div class="project-image" style="background: url('assets/real-estate-mr.png') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Real Estate MR Experience</h3>
+                            <p>AI-powered Mixed Reality Personalised Experience for property walkthroughs.</p>
+                            <a href="projects/project-real-estate-mr.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishing Well -->
+                <div class="project-card" data-tags="installation,interactive">
+                    <div class="project-image" style="background: url('assets/wishing-well.jpg') center center / cover no-repeat;">
+                        <div class="project-overlay">
+                            <h3>Wishing Well</h3>
+                            <p>A site-specific art installation by Anna Fromchenko incorporating video, sound, and sculpture.</p>
+                            <a href="projects/project-wishing-well.html" class="project-link">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -416,6 +451,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script type="module" src="js/hero-3d.js"></script>
     <!-- <script src="js/gallery-organizer.js"></script> -->
     <script>
     // Simple video controls - show on hover

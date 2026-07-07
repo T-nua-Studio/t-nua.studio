@@ -231,7 +231,7 @@
     color:#0B1416; background:var(--mint); box-shadow:0 10px 24px rgba(78,240,195,.25);} 
 .cta:hover{transform:translateY(-1px);}
 
-/* ========= HERO VIDEO BACKGROUND STYLES ========= */
+/* ========= HERO CANVAS (3D) & VIDEO BACKGROUND STYLES ========= */
 
 /* Hero video element - full screen background */
 .hero-video {
@@ -252,6 +252,18 @@
     opacity: 0.85;
 }
 
+/* Three.js canvas — fills the hero section behind all overlays */
+.hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    /* width / height are managed by Three.js renderer.setSize() */
+}
+
 /* Dark overlay for video to ensure text readability */
 .hero::before {
     content: '';
@@ -261,14 +273,14 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(14, 29, 34, 0.5), rgba(16, 38, 45, 0.4));
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
 }
 
 /* Hero glass panel positioned above video */
 .hero-glass {
     position: relative;
-    z-index: 3;
+    z-index: 4;
     transform: scale(0.8);
 }
 
@@ -290,11 +302,10 @@
     cursor: auto;
 }
 
-/* Motion preferences */
+/* Motion preferences — pause 3D orbit when user prefers reduced motion */
 @media (prefers-reduced-motion: reduce){
     .glass::before, .glass::after { animation: none !important; }
     .glass{ filter:none; }
-    .hero-video { transition: none; }
 }
 
 /* Mobile optimization */
