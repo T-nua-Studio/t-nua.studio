@@ -252,18 +252,6 @@
     opacity: 0.85;
 }
 
-/* Three.js canvas — fills the hero section behind all overlays */
-.hero-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    /* width / height are managed by Three.js renderer.setSize() */
-}
-
 /* Dark overlay for video to ensure text readability */
 .hero::before {
     content: '';

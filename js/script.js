@@ -4,8 +4,20 @@ const navMenu = document.querySelector('.nav-menu');
 
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isOpen = hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Open navigation menu');
+            hamburger.focus();
+        }
     });
 }
 
@@ -14,6 +26,8 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     if (hamburger && navMenu) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
     }
 }));
 
@@ -70,46 +84,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Contact form handling
+// Contact form handling. Until a processor agreement is in place, submission
+// stays under the visitor's control and opens their configured email client.
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const inputs = this.querySelectorAll('input, textarea');
-        const data = {};
-        inputs.forEach(input => {
-            if (input.name) data[input.name] = input.value;
+
+        const nameInput = this.querySelector('#contact-name');
+        const emailInput = this.querySelector('#contact-email');
+        const projectInput = this.querySelector('#contact-project');
+        const messageInput = this.querySelector('#contact-message');
+        const status = this.querySelector('.form-status');
+        const fields = [nameInput, emailInput, messageInput];
+
+        fields.forEach((field) => {
+            field.removeAttribute('aria-invalid');
+            const error = document.getElementById(`${field.id}-error`);
+            if (error) error.textContent = '';
         });
-        
-        // Simple validation
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
-        
-        if (!name || !email || !message) {
-            alert('Please fill in all required fields.');
+
+        let firstInvalid = null;
+        fields.forEach((field) => {
+            if (!field.validity.valid) {
+                field.setAttribute('aria-invalid', 'true');
+                const error = document.getElementById(`${field.id}-error`);
+                if (error) {
+                    error.textContent = field.validity.typeMismatch
+                        ? 'Enter a valid email address.'
+                        : 'This field is required.';
+                }
+                firstInvalid = firstInvalid || field;
+            }
+        });
+
+        if (firstInvalid) {
+            status.textContent = 'Please correct the highlighted fields.';
+            firstInvalid.focus();
             return;
         }
-        
-        // Simulate form submission
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+
+        const subject = projectInput.value.trim()
+            ? `Project enquiry: ${projectInput.value.trim()}`
+            : 'Project enquiry from T-NUA website';
+        const body = [
+            `Name: ${nameInput.value.trim()}`,
+            `Email: ${emailInput.value.trim()}`,
+            projectInput.value.trim() ? `Project type: ${projectInput.value.trim()}` : '',
+            '',
+            messageInput.value.trim()
+        ].filter((line, index) => line || index >= 3).join('\n');
+
+        status.textContent = 'Your email application should open with a prepared message. Review it and press Send there.';
+        window.location.href = `mailto:inf@t-nua.studio?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 }
 
 // Parallax effect for hero elements
 window.addEventListener('scroll', () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.floating-cube, .floating-sphere, .floating-pyramid');
     

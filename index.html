@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T91GMBJ81G"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-T91GMBJ81G');
-        </script>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T-NUA Studio - CGI, 3D Animation & VR Production | Israel</title>
@@ -37,20 +28,7 @@
 
     <link rel="icon" type="image/webp" href="assets/T-NUA-logo.webp">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/enhancements.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Three.js module imports -->
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="css/enhancements.css">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -73,19 +51,22 @@
       }
     }
     </script>
+    <link rel="stylesheet" href="css/compliance.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <header>
+    <nav class="navbar" aria-label="Primary navigation">
         <div class="nav-container">            <div class="nav-logo">
                 <a href="#home" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                    <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio" class="logo">
+                    <img src="assets/T-NUA-logo.webp" alt="" class="logo">
                     <span class="logo-text">T-NUA STUDIO</span>
                 </a>
-            </div><ul class="nav-menu">
+            </div><ul class="nav-menu" id="primary-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -99,13 +80,15 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
+            <button type="button" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
 
         <!-- Hero Section (Liquid Glass + Video Background) -->
         <section id="home" class="hero">
@@ -118,14 +101,12 @@
                 playsinline 
                 loop
                 poster="assets/videos/thumbnails/2-Tnua-logo.jpg"
-                aria-label="Hero background video">
+                aria-hidden="true"
+                tabindex="-1">
                 <source src="assets/videos/2-Tnua-logo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
 
-            <!-- 3D Background -->
-            <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-            
             <div class="glass hero-glass">
                 <div class="hero-content">
                     <h1>T-nua</h1>
@@ -144,7 +125,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/1.jpg" class="service-video" loading="lazy">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/1.jpg" class="service-video" loading="lazy" aria-hidden="true" tabindex="-1">
                             <source src="assets/videos/1.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -155,7 +136,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/3.jpg" class="service-video" loading="lazy">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/3.jpg" class="service-video" loading="lazy" aria-hidden="true" tabindex="-1">
                             <source src="assets/videos/3.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -166,7 +147,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-visual">
-                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/Ipod_motion.jpg" class="service-video" loading="lazy">
+                        <video autoplay muted playsinline loop poster="assets/videos/thumbnails/Ipod_motion.jpg" class="service-video" loading="lazy" aria-hidden="true" tabindex="-1">
                             <source src="assets/videos/Ipod_motion.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -401,20 +382,30 @@
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">LET'S CREATE SOMETHING EXTRAORDINARY TOGETHER</h2>
-                <div class="contact-form-container">                    <form class="contact-form">
+                <div class="contact-form-container">
+                    <form class="contact-form" novalidate>
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <label class="form-label" for="contact-name">Your name <span class="form-required">(required)</span></label>
+                            <input id="contact-name" type="text" name="name" autocomplete="name" required aria-describedby="contact-name-error">
+                            <span class="form-hint" id="contact-name-error"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label class="form-label" for="contact-email">Your email <span class="form-required">(required)</span></label>
+                            <input id="contact-email" type="email" name="email" autocomplete="email" required aria-describedby="contact-email-error">
+                            <span class="form-hint" id="contact-email-error"></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="project" placeholder="Project Type">
+                            <label class="form-label" for="contact-project">Project type <span class="form-required">(optional)</span></label>
+                            <input id="contact-project" type="text" name="project" autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Tell us about your project" required></textarea>
+                            <label class="form-label" for="contact-message">Tell us about your project <span class="form-required">(required)</span></label>
+                            <textarea id="contact-message" name="message" required aria-describedby="contact-message-error contact-privacy-notice"></textarea>
+                            <span class="form-hint" id="contact-message-error"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-privacy-notice" id="contact-privacy-notice">Providing this information is voluntary. T-NUA Studio uses it only to respond and take requested pre-contract steps. It will be passed to your email provider and ours when you send the message. Without your email and message, we cannot reply. You may request access or correction at <a href="mailto:inf@t-nua.studio">inf@t-nua.studio</a>. See our <a href="privacy.html">Privacy Policy</a>.</p>
+                        <button type="submit" class="btn btn-primary">Prepare Email</button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -422,10 +413,11 @@
     </section>
 
     <!-- Footer -->
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">            <div class="footer-logo">
-                <img src="assets/T-NUA-logo.webp" alt="T-NUA Studio">
+                <img src="assets/T-NUA-logo.webp" alt="">
                 <span>T-NUA STUDIO</span>
             </div>                <div class="footer-links">
                     <a href="#projects">Projects</a>
@@ -434,13 +426,13 @@
                 </div>
                 <div class="footer-social">
                     <a href="https://www.instagram.com/tnua.studio/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/instagram_icon.svg" alt="Instagram">
+                        <img src="assets/icons/instagram_icon.svg" alt="">
                     </a>
                     <a href="https://www.linkedin.com/company/t-nua/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/linkedin_icon.svg" alt="LinkedIn">
+                        <img src="assets/icons/linkedin_icon.svg" alt="">
                     </a>
                     <a href="mailto:inf@t-nua.studio" aria-label="Email">
-                        <img src="assets/icons/email_icon.svg" alt="Email">
+                        <img src="assets/icons/email_icon.svg" alt="">
                     </a>
                 </div>
             </div>
@@ -448,24 +440,18 @@
                 <p>&copy; 2024 T-NUA Studio. All Rights Reserved.</p>
             </div>
         </div>
+    
+            <div class="compliance-footer-links" aria-label="Legal and accessibility">
+                <a href="privacy.html">Privacy</a>
+                <a href="cookies.html">Cookies</a>
+                <button type="button" class="footer-cookie-button" data-open-consent>Cookie settings</button>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
     </footer>
 
     <script src="js/script.js"></script>
-    <script type="module" src="js/hero-3d.js"></script>
     <!-- <script src="js/gallery-organizer.js"></script> -->
-    <script>
-    // Simple video controls - show on hover
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.gallery-item video').forEach(function(video) {
-            video.controls = false;
-            video.parentElement.addEventListener('mouseenter', function() {
-                video.controls = true;
-            });
-            video.parentElement.addEventListener('mouseleave', function() {
-                video.controls = false;
-            });
-        });
-    });
-    </script>
+    <script src="js/privacy.js"></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/146755814.js"></script>
 </body>
 </html>
