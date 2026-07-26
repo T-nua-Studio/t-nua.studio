@@ -84,61 +84,145 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Contact form handling. Until a processor agreement is in place, submission
-// stays under the visitor's control and opens their configured email client.
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+// HubSpot contact form. The form itself owns validation and submission;
+// this code only loads the official embed once and manages the modal.
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('[data-contact-modal]');
+    const openButton = document.querySelector('[data-open-contact-form]');
+    const target = document.querySelector('#hubspot-contact-form');
+    if (!modal || !openButton || !target) return;
 
-        const nameInput = this.querySelector('#contact-name');
-        const emailInput = this.querySelector('#contact-email');
-        const projectInput = this.querySelector('#contact-project');
-        const messageInput = this.querySelector('#contact-message');
-        const status = this.querySelector('.form-status');
-        const fields = [nameInput, emailInput, messageInput];
+    const HUBSPOT_FORM_ID = '10e6f99d-19ac-4544-900b-5d2edc31ce70';
+    const HUBSPOT_SCRIPT_SRC = 'https://js-eu1.hsforms.net/forms/embed/146755814.js';
+    let hubspotScriptPromise;
+    let formInitialised = false;
+    let previousFocus = null;
 
-        fields.forEach((field) => {
-            field.removeAttribute('aria-invalid');
-            const error = document.getElementById(`${field.id}-error`);
-            if (error) error.textContent = '';
-        });
+    function isConfigured() {
+        return Boolean(HUBSPOT_FORM_ID);
+    }
 
-        let firstInvalid = null;
-        fields.forEach((field) => {
-            if (!field.validity.valid) {
-                field.setAttribute('aria-invalid', 'true');
-                const error = document.getElementById(`${field.id}-error`);
-                if (error) {
-                    error.textContent = field.validity.typeMismatch
-                        ? 'Enter a valid email address.'
-                        : 'This field is required.';
+    function setFormMessage(message, className) {
+        target.innerHTML = '';
+        const messageElement = document.createElement('p');
+        messageElement.className = className || 'hubspot-form-message';
+        messageElement.textContent = message;
+        target.appendChild(messageElement);
+    }
+
+    function loadHubSpotScript() {
+        if (hubspotScriptPromise) return hubspotScriptPromise;
+
+        hubspotScriptPromise = new Promise((resolve, reject) => {
+            let settled = false;
+            const finish = (callback, value) => {
+                if (settled) return;
+                settled = true;
+                clearTimeout(timeoutId);
+                callback(value);
+            };
+            const timeoutId = setTimeout(() => finish(reject, new Error('HubSpot Forms script timed out')), 15000);
+            const existingScript = document.querySelector(`script[src="${HUBSPOT_SCRIPT_SRC}"]`);
+            if (existingScript) {
+                if (existingScript.dataset.loaded === 'true') {
+                    finish(resolve, true);
+                } else {
+                    existingScript.addEventListener('load', () => {
+                        existingScript.dataset.loaded = 'true';
+                        finish(resolve, true);
+                    }, { once: true });
+                    existingScript.addEventListener('error', () => {
+                        existingScript.remove();
+                        finish(reject, new Error('HubSpot Forms script failed to load'));
+                    }, { once: true });
                 }
-                firstInvalid = firstInvalid || field;
+                return;
             }
-        });
 
-        if (firstInvalid) {
-            status.textContent = 'Please correct the highlighted fields.';
-            firstInvalid.focus();
+            const script = document.createElement('script');
+            script.charset = 'utf-8';
+            script.type = 'text/javascript';
+            script.src = HUBSPOT_SCRIPT_SRC;
+            script.onload = () => {
+                script.dataset.loaded = 'true';
+                finish(resolve, true);
+            };
+            script.onerror = () => {
+                script.remove();
+                finish(reject, new Error('HubSpot Forms script failed to load'));
+            };
+            document.head.appendChild(script);
+        });
+        return hubspotScriptPromise;
+    }
+
+    function initialiseForm() {
+        if (formInitialised) return;
+        formInitialised = true;
+
+        if (!isConfigured()) {
+            setFormMessage('The contact form is not configured yet. Please add the HubSpot Form ID before publishing.', 'hubspot-form-error');
             return;
         }
 
-        const subject = projectInput.value.trim()
-            ? `Project enquiry: ${projectInput.value.trim()}`
-            : 'Project enquiry from T-NUA website';
-        const body = [
-            `Name: ${nameInput.value.trim()}`,
-            `Email: ${emailInput.value.trim()}`,
-            projectInput.value.trim() ? `Project type: ${projectInput.value.trim()}` : '',
-            '',
-            messageInput.value.trim()
-        ].filter((line, index) => line || index >= 3).join('\n');
+        target.innerHTML = '<div class="hs-form-frame" data-region="eu1" data-form-id="' + HUBSPOT_FORM_ID + '" data-portal-id="146755814"></div>';
+        loadHubSpotScript()
+            .then(() => {
+                const frame = target.querySelector('.hs-form-frame');
+                if (frame) frame.setAttribute('aria-label', 'HubSpot contact form');
+            })
+            .catch(() => {
+                formInitialised = false;
+                hubspotScriptPromise = null;
+                document.querySelector(`script[src="${HUBSPOT_SCRIPT_SRC}"]`)?.remove();
+                setFormMessage('We could not load the contact form. Please try again or email inf@t-nua.studio.', 'hubspot-form-error');
+            });
+    }
 
-        status.textContent = 'Your email application should open with a prepared message. Review it and press Send there.';
-        window.location.href = `mailto:inf@t-nua.studio?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    function getFocusableElements() {
+        return modal.querySelectorAll('button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])');
+    }
+
+    function openModal() {
+        previousFocus = document.activeElement;
+        modal.hidden = false;
+        document.body.classList.add('contact-modal-open');
+        openButton.setAttribute('aria-expanded', 'true');
+        initialiseForm();
+        modal.querySelector('.contact-modal-close').focus();
+    }
+
+    function closeModal() {
+        modal.hidden = true;
+        document.body.classList.remove('contact-modal-open');
+        openButton.setAttribute('aria-expanded', 'false');
+        if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+    }
+
+    openButton.setAttribute('aria-expanded', 'false');
+    openButton.addEventListener('click', openModal);
+    modal.querySelectorAll('[data-contact-close]').forEach((element) => element.addEventListener('click', closeModal));
+    modal.querySelector('.contact-modal-dialog').addEventListener('click', (event) => event.stopPropagation());
+    modal.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+            return;
+        }
+        if (event.key !== 'Tab') return;
+        const focusable = [...getFocusableElements()];
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
     });
-}
+});
 
 // Parallax effect for hero elements
 window.addEventListener('scroll', () => {

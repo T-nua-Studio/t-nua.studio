@@ -383,34 +383,26 @@
             <div class="contact-content">
                 <h2 class="section-title">LET'S CREATE SOMETHING EXTRAORDINARY TOGETHER</h2>
                 <div class="contact-form-container">
-                    <form class="contact-form" novalidate>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-name">Your name <span class="form-required">(required)</span></label>
-                            <input id="contact-name" type="text" name="name" autocomplete="name" required aria-describedby="contact-name-error">
-                            <span class="form-hint" id="contact-name-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-email">Your email <span class="form-required">(required)</span></label>
-                            <input id="contact-email" type="email" name="email" autocomplete="email" required aria-describedby="contact-email-error">
-                            <span class="form-hint" id="contact-email-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-project">Project type <span class="form-required">(optional)</span></label>
-                            <input id="contact-project" type="text" name="project" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-message">Tell us about your project <span class="form-required">(required)</span></label>
-                            <textarea id="contact-message" name="message" required aria-describedby="contact-message-error contact-privacy-notice"></textarea>
-                            <span class="form-hint" id="contact-message-error"></span>
-                        </div>
-                        <p class="form-privacy-notice" id="contact-privacy-notice">Providing this information is voluntary. T-NUA Studio uses it only to respond and take requested pre-contract steps. It will be passed to your email provider and ours when you send the message. Without your email and message, we cannot reply. You may request access or correction at <a href="mailto:inf@t-nua.studio">inf@t-nua.studio</a>. See our <a href="privacy.html">Privacy Policy</a>.</p>
-                        <button type="submit" class="btn btn-primary">Prepare Email</button>
-                        <p class="form-status" role="status" aria-live="polite"></p>
-                    </form>
+                    <button type="button" class="btn btn-primary contact-open-button" data-open-contact-form>
+                        Send Message
+                    </button>
+                    <p class="form-status" data-contact-status role="status" aria-live="polite"></p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="contact-modal" data-contact-modal hidden>
+        <div class="contact-modal-backdrop" data-contact-close tabindex="-1"></div>
+        <section class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" aria-describedby="contact-modal-description">
+            <button type="button" class="contact-modal-close" data-contact-close aria-label="Close contact form">Close</button>
+            <h2 id="contact-modal-title">Send us a message</h2>
+            <p id="contact-modal-description">Tell us a little about your project and we will get back to you.</p>
+            <div id="hubspot-contact-form" class="hubspot-contact-form" aria-live="polite">
+                <p class="hubspot-form-loading">Loading contact form…</p>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     </main>

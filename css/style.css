@@ -592,6 +592,7 @@ body {
 .contact-form-container {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .contact-form {
@@ -622,6 +623,168 @@ body {
 .form-group textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+.contact-open-button {
+    min-width: 190px;
+}
+
+.contact-modal-open {
+    overflow: hidden;
+}
+
+.contact-modal[hidden] {
+    display: none;
+}
+
+.contact-modal {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.contact-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.contact-modal-dialog {
+    position: relative;
+    width: min(680px, 100%);
+    max-height: min(90vh, 860px);
+    overflow-y: auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: #fff;
+    background: linear-gradient(145deg, rgba(26, 63, 63, 0.98), rgba(8, 18, 18, 0.99));
+    border: 1px solid rgba(102, 255, 226, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.contact-modal-dialog h2 {
+    margin: 0 3.5rem 0.5rem 0;
+    color: #66ffe2;
+}
+
+.contact-modal-dialog > p {
+    margin-bottom: 1.5rem;
+    color: #d6dfdd;
+}
+
+.contact-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    padding: 0.4rem 0.7rem;
+    color: #66ffe2;
+    background: transparent;
+    border: 1px solid rgba(102, 255, 226, 0.45);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hubspot-contact-form {
+    min-height: 160px;
+    --hsf-global__color: #ffffff;
+    --hsf-heading__color: #ffffff;
+    --hsf-richtext__color: #ffffff;
+    --hsf-field-label__color: #ffffff;
+    --hsf-field-description__color: #ffffff;
+    --hsf-field-footer__color: #ffffff;
+    --hsf-field-input__color: #07110f;
+    --hsf-field-textarea__color: #07110f;
+}
+
+.hubspot-form-loading,
+.hubspot-form-message {
+    color: #d6dfdd;
+}
+
+.hubspot-form-success {
+    color: #66ffe2;
+}
+
+.hubspot-form-error {
+    color: #ffb4ab;
+}
+
+.hubspot-contact-form .hs-form-field {
+    margin-bottom: 1.25rem;
+}
+
+.hubspot-contact-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.hubspot-contact-form input,
+.hubspot-contact-form textarea,
+.hubspot-contact-form select {
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    background: rgba(0, 166, 126, 0.05);
+    border: 2px solid rgba(0, 166, 126, 0.2);
+    border-radius: 15px;
+    font: inherit;
+}
+
+.hubspot-contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.hubspot-contact-form input:focus,
+.hubspot-contact-form textarea:focus,
+.hubspot-contact-form select:focus {
+    outline: none;
+    border-color: #66ffe2;
+    background: rgba(0, 166, 126, 0.1);
+    box-shadow: 0 0 20px rgba(0, 166, 126, 0.2);
+}
+
+.hubspot-contact-form .hs-error-msgs,
+.hubspot-contact-form .hs-error-msg {
+    margin: 0.4rem 0 0;
+    padding: 0;
+    color: #ffb4ab;
+    font-size: 0.92rem;
+    list-style: none;
+}
+
+.hubspot-contact-form .hs-button {
+    min-width: 190px;
+    padding: 1rem 2rem;
+    color: #07110f;
+    background: #66ffe2;
+    border: 0;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hubspot-contact-form .hs-button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+@media (max-width: 600px) {
+    .contact-modal {
+        align-items: start;
+        padding: 0.5rem;
+    }
+
+    .contact-modal-dialog {
+        max-height: calc(100vh - 1rem);
+        border-radius: 18px;
+    }
 }
 
 /* Footer */
